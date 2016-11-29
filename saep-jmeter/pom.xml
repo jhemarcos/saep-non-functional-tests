@@ -5,15 +5,15 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>jmeter-maven-plugin-example</artifactId>
+    <artifactId>saep-jmeter</artifactId>
     <groupId>com.lazerycode.jmeter</groupId>
     <version>DEV-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <description>
-        Executes a JMeter test.
+        Testes de performance, carga e estresse para o sistema Saep
 
-        Invoke with "mvn verify -Pperformance"
+        No diretorio desde arquivo, chame "mvn verify -Ptests"
     </description>
 
     <properties>
@@ -33,7 +33,6 @@
             <id>performance</id>
             <build>
                 <plugins>
-                    <!-- execute JMeter test -->
                     <plugin>
                         <groupId>${project.groupId}</groupId>
                         <artifactId>jmeter-maven-plugin</artifactId>
@@ -48,19 +47,19 @@
                         </executions>
                         <configuration>
                             <propertiesUser>
-                                <!--A user which accesses all URLs-->
+                                <!-- Nome desse group thread -->
                                 <threadgroup00.name>test</threadgroup00.name>
-                                <!--number of threads to use-->
+                                <!-- Número de threads -->
                                 <threadgroup00.numberOfThreads>${test.threads}</threadgroup00.numberOfThreads>
-                                <!--delay of the test in seconds-->
+                                <!-- Delay inicial do teste em segundos -->
                                 <threadgroup00.scheduledDelay>0</threadgroup00.scheduledDelay>
-                                <!--duration of the test in seconds-->
+                                <!-- Duração do teste em segundos -->
                                 <threadgroup00.scheduledDuration>${test.duration}</threadgroup00.scheduledDuration>
-                                <!--how long till all threads are up and running in seconds-->
+                                <!-- Fade in das threads em segundos -->
                                 <threadgroup00.rampUp>1</threadgroup00.rampUp>
-                                <!--target throughput of all threads of the group per minute-->
+                                <!-- Taxa de transferência de todas as threads do grupo por minuto -->
                                 <threadgroup00.throughput>100000000</threadgroup00.throughput>
-                                <!-- use uris from given file -->
+                                <!-- Usar urls do arquivo -->
                                 <threadgroup00.dataFile>${webapp.uris}</threadgroup00.dataFile>
                                 <protocol>${webapp.protocol}</protocol>
                                 <server>${webapp.host}</server>
@@ -121,12 +120,12 @@
         </profile>
     </profiles>
 
-    <!-- in case we want to use a SNAPSHOT version of the jmeter-maven-plugin -->
+    <!-- Se for necessário usar a versão SNAPSHOT do plugin -->
     <pluginRepositories>
         <pluginRepository>
             <id>sonatype-snapshots</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </pluginRepository>
     </pluginRepositories>
-
+    <name>saep-jmeter</name>
 </project>
