@@ -2,7 +2,7 @@
 <jmeterTestPlan version="1.2" properties="2.9" jmeter="3.0 r1743807">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Saep Tests" enabled="true">
-      <stringProp name="TestPlan.comments"></stringProp>
+      <stringProp name="TestPlan.comments">https://github.com/jhemarcos/saep-non-functional-tests</stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -29,16 +29,15 @@
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
-        <stringProp name="TestPlan.comments">https://github.com/jhemarcos/saep-non-functional-tests</stringProp>
       </Arguments>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup00.name,none)}" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(performThreadgroup00.name,none)}" enabled="true">
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">${__P(threadgroup00.numberOfLoops,1)}</stringProp>
+          <stringProp name="LoopController.loops">${__P(performThreadgroup00.numberOfLoops,1)}</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">${__P(threadgroup00.numberOfThreads,0)}</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">${__P(threadgroup00.rampUp,1)}</stringProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(performThreadgroup00.numberOfThreads,0)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(performThreadgroup00.rampUp,1)}</stringProp>
         <longProp name="ThreadGroup.start_time">1480900068000</longProp>
         <longProp name="ThreadGroup.end_time">1480900068000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
@@ -51,7 +50,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
           <stringProp name="delimiter">;</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__P(threadgroup00.dataFile)}</stringProp>
+          <stringProp name="filename">${__P(performThreadgroup00.dataFile)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>

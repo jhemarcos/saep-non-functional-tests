@@ -31,26 +31,26 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(loadThreadgroup00.name,none)}" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(stressThreadgroup00.name,none)}" enabled="true">
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">${__P(loadThreadgroup00.numberOfLoops,1)}</stringProp>
+          <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">${__P(loadThreadgroup00.numberOfThreads,0)}</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">${__P(loadThreadgroup00.rampUp,1)}</stringProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(stressThreadgroup00.numberOfThreads,0)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(stressThreadgroup00.rampUp,1)}</stringProp>
         <longProp name="ThreadGroup.start_time">1480900855000</longProp>
         <longProp name="ThreadGroup.end_time">1480900855000</longProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(stressThreadgroup00.scheduledDuration,10)}</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
-        <stringProp name="TestPlan.comments">How many transactions will be supported per minute when we increase simultaneous users to 2,000, 3,000, 4,000?</stringProp>
+        <stringProp name="TestPlan.comments">How many transactions per minute are requested by 5,000, 6,000, 7,000 concurrent users will be supported by the application under unspecified conditions of the software and even the hardware itself?</stringProp>
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
           <stringProp name="delimiter">;</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__P(loadThreadgroup00.dataFile)}</stringProp>
+          <stringProp name="filename">${__P(stressThreadgroup00.dataFile)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
@@ -80,26 +80,26 @@
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(loadThreadgroup01.name,none)}" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(stressThreadgroup01.name,none)}" enabled="true">
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">${__P(loadThreadgroup01.numberOfLoops,1)}</stringProp>
+          <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">${__P(loadThreadgroup01.numberOfThreads,0)}</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">${__P(loadThreadgroup01.rampUp,1)}</stringProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(stressThreadgroup01.numberOfThreads,0)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(stressThreadgroup01.rampUp,1)}</stringProp>
         <longProp name="ThreadGroup.start_time">1480900855000</longProp>
         <longProp name="ThreadGroup.end_time">1480900855000</longProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(stressThreadgroup01.scheduledDuration,10)}</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
-        <stringProp name="TestPlan.comments">How many transactions will be supported per minute when we increase simultaneous users to 2,000, 3,000, 4,000?</stringProp>
+        <stringProp name="TestPlan.comments">How many transactions per minute are requested by 5,000, 6,000, 7,000 concurrent users will be supported by the application under unspecified conditions of the software and even the hardware itself?</stringProp>
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
           <stringProp name="delimiter">;</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__P(loadThreadgroup01.dataFile)}</stringProp>
+          <stringProp name="filename">${__P(stressThreadgroup01.dataFile)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
@@ -129,26 +129,26 @@
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(loadThreadgroup02.name,none)}" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(stressThreadgroup02.name,none)}" enabled="true">
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">${__P(loadThreadgroup02.numberOfLoops,1)}</stringProp>
+          <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">${__P(loadThreadgroup02.numberOfThreads,0)}</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">${__P(loadThreadgroup02.rampUp,1)}</stringProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(stressThreadgroup02.numberOfThreads,0)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(stressThreadgroup02.rampUp,1)}</stringProp>
         <longProp name="ThreadGroup.start_time">1480900855000</longProp>
         <longProp name="ThreadGroup.end_time">1480900855000</longProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(stressThreadgroup02.scheduledDuration,10)}</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
-        <stringProp name="TestPlan.comments">How many transactions will be supported per minute when we increase simultaneous users to 2,000, 3,000, 4,000?</stringProp>
+        <stringProp name="TestPlan.comments">How many transactions per minute are requested by 5,000, 6,000, 7,000 concurrent users will be supported by the application under unspecified conditions of the software and even the hardware itself?</stringProp>
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
           <stringProp name="delimiter">;</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__P(loadThreadgroup02.dataFile)}</stringProp>
+          <stringProp name="filename">${__P(stressThreadgroup02.dataFile)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>

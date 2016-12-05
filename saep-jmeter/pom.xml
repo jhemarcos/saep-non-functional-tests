@@ -11,9 +11,9 @@
     <packaging>pom</packaging>
 
     <description>
-        Testes de performance, carga e estresse para o sistema Saep
+        Performance, load and stress tests for Saep system.
 
-        No diretorio desde arquivo, chame "mvn verify -Ptests"
+        On this file directory, run "mvn verify -Ptests"
     </description>
 
     <properties>
@@ -33,6 +33,7 @@
             <id>tests</id>
             <build>
                 <plugins>
+                    <!-- Process tests -->
                     <plugin>
                         <groupId>${project.groupId}</groupId>
                         <artifactId>jmeter-maven-plugin</artifactId>
@@ -53,26 +54,104 @@
 
                                 <!-- ######### PERFORMANCE TEST ######### -->
                                 <!-- Nome desse group thread -->
-                                <threadgroup00.name>Performance Test</threadgroup00.name>
+                                <performThreadgroup00.name>PerformanceTest</performThreadgroup00.name>
                                 <!-- Número de threads -->
-                                <threadgroup00.numberOfThreads>1000</threadgroup00.numberOfThreads>
+                                <performThreadgroup00.numberOfThreads>1000</performThreadgroup00.numberOfThreads>
                                 <!-- Delay inicial do teste em segundos -->
-                                <threadgroup00.scheduledDelay>0</threadgroup00.scheduledDelay>
+                                <performThreadgroup00.scheduledDelay>0</performThreadgroup00.scheduledDelay>
                                 <!-- Fade in das threads em segundos -->
-                                <threadgroup00.rampUp>0</threadgroup00.rampUp>
+                                <performThreadgroup00.rampUp>0</performThreadgroup00.rampUp>
                                 <!-- Taxa de transferência de todas as threads do grupo por minuto -->
-                                <threadgroup00.numberOfLoops>1</threadgroup00.numberOfLoops>
+                                <performThreadgroup00.numberOfLoops>1</performThreadgroup00.numberOfLoops>
                                 <!-- Usar urls do arquivo -->
-                                <threadgroup00.dataFile>${webapp.uris}</threadgroup00.dataFile>
+                                <performThreadgroup00.dataFile>${webapp.uris}</performThreadgroup00.dataFile>
 
 
-                                
-                                
+                                <!-- ######### LOAD TEST ######### -->
+                                <!-- Nome desse group thread -->
+                                <loadThreadgroup00.name>LoadTest1</loadThreadgroup00.name>
+                                <!-- Número de threads -->
+                                <loadThreadgroup00.numberOfThreads>2000</loadThreadgroup00.numberOfThreads>
+                                <!-- Delay inicial do teste em segundos -->
+                                <loadThreadgroup00.scheduledDelay>0</loadThreadgroup00.scheduledDelay>
+                                <!-- Fade in das threads em segundos -->
+                                <loadThreadgroup00.rampUp>0</loadThreadgroup00.rampUp>
+                                <!-- Taxa de transferência de todas as threads do grupo por minuto -->
+                                <loadThreadgroup00.numberOfLoops>1</loadThreadgroup00.numberOfLoops>
+                                <!-- Usar urls do arquivo -->
+                                <loadThreadgroup00.dataFile>${webapp.uris}</loadThreadgroup00.dataFile>
+
+                                <!-- Nome desse group thread -->
+                                <loadThreadgroup01.name>LoadTest2</loadThreadgroup01.name>
+                                <!-- Número de threads -->
+                                <loadThreadgroup01.numberOfThreads>3000</loadThreadgroup01.numberOfThreads>
+                                <!-- Delay inicial do teste em segundos -->
+                                <loadThreadgroup01.scheduledDelay>0</loadThreadgroup01.scheduledDelay>
+                                <!-- Fade in das threads em segundos -->
+                                <loadThreadgroup01.rampUp>0</loadThreadgroup01.rampUp>
+                                <!-- Taxa de transferência de todas as threads do grupo por minuto -->
+                                <loadThreadgroup01.numberOfLoops>1</loadThreadgroup01.numberOfLoops>
+                                <!-- Usar urls do arquivo -->
+                                <loadThreadgroup01.dataFile>${webapp.uris}</loadThreadgroup01.dataFile>
+
+                                <!-- Nome desse group thread -->
+                                <loadThreadgroup02.name>LoadTest3</loadThreadgroup02.name>
+                                <!-- Número de threads -->
+                                <loadThreadgroup02.numberOfThreads>4000</loadThreadgroup02.numberOfThreads>
+                                <!-- Delay inicial do teste em segundos -->
+                                <loadThreadgroup02.scheduledDelay>0</loadThreadgroup02.scheduledDelay>
+                                <!-- Fade in das threads em segundos -->
+                                <loadThreadgroup02.rampUp>0</loadThreadgroup02.rampUp>
+                                <!-- Taxa de transferência de todas as threads do grupo por minuto -->
+                                <loadThreadgroup02.numberOfLoops>1</loadThreadgroup02.numberOfLoops>
+                                <!-- Usar urls do arquivo -->
+                                <loadThreadgroup02.dataFile>${webapp.uris}</loadThreadgroup02.dataFile>
+
+
+                                <!-- ######### STRESS TEST ######### -->
+                                <!-- Nome desse group thread -->
+                                <stressThreadgroup00.name>StressTest1</stressThreadgroup00.name>
+                                <!-- Número de threads -->
+                                <stressThreadgroup00.numberOfThreads>5000</stressThreadgroup00.numberOfThreads>
+                                <!-- Duração do teste em segundos -->
+                                <stressThreadgroup00.scheduledDuration>60</stressThreadgroup00.scheduledDuration>
+                                <!-- Fade in das threads em segundos -->
+                                <stressThreadgroup00.rampUp>0</stressThreadgroup00.rampUp>
+                                <!-- Usar urls do arquivo -->
+                                <stressThreadgroup00.dataFile>${webapp.uris}</stressThreadgroup00.dataFile>
+
+                                <!-- Nome desse group thread -->
+                                <stressThreadgroup01.name>StressTest2</stressThreadgroup01.name>
+                                <!-- Número de threads -->
+                                <stressThreadgroup01.numberOfThreads>6000</stressThreadgroup01.numberOfThreads>
+                                <!-- Duração do teste em segundos -->
+                                <stressThreadgroup01.scheduledDuration>60</stressThreadgroup01.scheduledDuration>
+                                <!-- Fade in das threads em segundos -->
+                                <stressThreadgroup01.rampUp>0</stressThreadgroup01.rampUp>
+                                <!-- Usar urls do arquivo -->
+                                <stressThreadgroup01.dataFile>${webapp.uris}</stressThreadgroup01.dataFile>
+
+                                <!-- Nome desse group thread -->
+                                <stressThreadgroup02.name>StressTest3</stressThreadgroup02.name>
+                                <!-- Número de threads -->
+                                <stressThreadgroup02.numberOfThreads>7000</stressThreadgroup02.numberOfThreads>
+                                <!-- Duração do teste em segundos -->
+                                <stressThreadgroup02.scheduledDuration>60</stressThreadgroup02.scheduledDuration>
+                                <!-- Fade in das threads em segundos -->
+                                <stressThreadgroup02.rampUp>0</stressThreadgroup02.rampUp>
+                                <!-- Usar urls do arquivo -->
+                                <stressThreadgroup02.dataFile>${webapp.uris}</stressThreadgroup02.dataFile>
                             </propertiesUser>
+                            <!-- Ignore erros on show result requests -->
                             <ignoreResultFailures>true</ignoreResultFailures>
+                            <!-- Regex for process jmeter test files -->
+                            <testFilesIncluded>
+                                <jMeterTestFile>*-tests.jmx</jMeterTestFile>
+                            </testFilesIncluded>
                         </configuration>
                     </plugin>
 
+                    <!-- Make output html -->
                     <plugin>
                         <groupId>${project.groupId}</groupId>
                         <artifactId>jmeter-analysis-maven-plugin</artifactId>
@@ -86,45 +165,22 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <!--
-                            source file that contains jmeter result data. Needs to be XML format or a GZIPed XML format
-                            -->
+                            <!-- Source file that contains jmeter result jtl data -->
                             <source>${project.build.directory}/jmeter/results/*</source>
 
-                            <!--
-                            directory where to store analysis report files. At least a file "summary.txt" will be stored here.
-                            -->
+                            <!-- Directory where to store analysis report files -->
                             <targetDirectory>${project.build.directory}/reports</targetDirectory>
 
-                            <!--
-                            Defines groups of requests by URL patterns,
-                            e.g. URIs starting with /mock/page are associated with group "pages". All analysis results are
-                            If there is no such mapping then the threadgroups from the jmeter.xml are used.
-                            -->
-                            <!--<requestGroups>-->
-                            <!--<test>/en-US/firefox/**</test>-->
-                            <!--</requestGroups>-->
-
-                            <!--
-                            Mapping from resource URL to file name. Every resource will be downloaded and stored in 'targetDirectory'
-                            with the given filename. Tokens "_FROM_" and "_TO_" can be used as placeholders. These placeholders will
-                            be replaced by timestamps of execution interval (formatted as ISO8601, e.g. '20111216T145509+0100').
-                            -->
-                            <!--<remoteResources>-->
-                            <!--<property>-->
-                            <!--<name>http://yourhost/path?from=_FROM_&amp;to=_TO_</name>-->
-                            <!--<value>my_resource.txt</value>-->
-                            <!--</property>-->
-                            <!--</remoteResources>-->
+                            <!-- Process all files found by the pattern defined in <source> -->
+                            <processAllFilesFound>true</processAllFilesFound>
                         </configuration>
                     </plugin>
-
                 </plugins>
             </build>
         </profile>
     </profiles>
 
-    <!-- Se for necessário usar a versão SNAPSHOT do plugin -->
+    <!-- If need use a SNAPSHOT version of plugin -->
     <pluginRepositories>
         <pluginRepository>
             <id>sonatype-snapshots</id>
