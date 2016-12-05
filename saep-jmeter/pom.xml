@@ -30,7 +30,7 @@
     <profiles>
 
         <profile>
-            <id>performance</id>
+            <id>tests</id>
             <build>
                 <plugins>
                     <plugin>
@@ -47,23 +47,27 @@
                         </executions>
                         <configuration>
                             <propertiesUser>
-                                <!-- Nome desse group thread -->
-                                <threadgroup00.name>test</threadgroup00.name>
-                                <!-- Número de threads -->
-                                <threadgroup00.numberOfThreads>${test.threads}</threadgroup00.numberOfThreads>
-                                <!-- Delay inicial do teste em segundos -->
-                                <threadgroup00.scheduledDelay>0</threadgroup00.scheduledDelay>
-                                <!-- Duração do teste em segundos -->
-                                <threadgroup00.scheduledDuration>${test.duration}</threadgroup00.scheduledDuration>
-                                <!-- Fade in das threads em segundos -->
-                                <threadgroup00.rampUp>1</threadgroup00.rampUp>
-                                <!-- Taxa de transferência de todas as threads do grupo por minuto -->
-                                <threadgroup00.throughput>100000000</threadgroup00.throughput>
-                                <!-- Usar urls do arquivo -->
-                                <threadgroup00.dataFile>${webapp.uris}</threadgroup00.dataFile>
                                 <protocol>${webapp.protocol}</protocol>
                                 <server>${webapp.host}</server>
                                 <port>${webapp.port}</port>
+
+                                <!-- ######### PERFORMANCE TEST ######### -->
+                                <!-- Nome desse group thread -->
+                                <threadgroup00.name>Performance Test</threadgroup00.name>
+                                <!-- Número de threads -->
+                                <threadgroup00.numberOfThreads>1000</threadgroup00.numberOfThreads>
+                                <!-- Delay inicial do teste em segundos -->
+                                <threadgroup00.scheduledDelay>0</threadgroup00.scheduledDelay>
+                                <!-- Fade in das threads em segundos -->
+                                <threadgroup00.rampUp>0</threadgroup00.rampUp>
+                                <!-- Taxa de transferência de todas as threads do grupo por minuto -->
+                                <threadgroup00.numberOfLoops>1</threadgroup00.numberOfLoops>
+                                <!-- Usar urls do arquivo -->
+                                <threadgroup00.dataFile>${webapp.uris}</threadgroup00.dataFile>
+
+
+                                
+                                
                             </propertiesUser>
                             <ignoreResultFailures>true</ignoreResultFailures>
                         </configuration>

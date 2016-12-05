@@ -1,2 +1,3 @@
 *.hprof
 /saep-jmeter/target/
+/jmeter/backups
