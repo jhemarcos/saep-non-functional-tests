@@ -22,7 +22,27 @@ mvn verify -Ptests
 
 ### Analyse Tests
 
-Analyse...
+View results:
+```
+cd saep-non-functional-tests/saep-jmeter/target/reports
+```
+* Open the index.html file with some browser.
+
+![Index Results](http://i.imgur.com/TMiT6Hz.png)
+
+
+* Find important data for your evaluation. For example:
+
+![Important Results First](http://i.imgur.com/hxkYwnr.png)
+
+![Important Results Second](http://i.imgur.com/gVut4lr.png)
+
+![Important Results Thirdy](http://i.imgur.com/1jnmCFG.png)
+
+
+* If you have set up more than one url, you can see detailed results here
+
+![Other Results Thirdy](http://i.imgur.com/PNA5ClQ.png)
 
 
 # Documentation
@@ -53,4 +73,6 @@ These properties are unique to each test. The key ${testTag} refers generically 
 | ${testTag}.scheduledDuration | Test Properties | Total test duration, even if all requests have not been finalized |
 
 ### Configure paths
-Configure...
+You can configure more than one path for the requests. The total number of requests for that test group will be divided by the number of registered paths. To configure more paths, open the ```saep-non-functional-tests/saep-jmeter/src/test/uris/uris.txt``` as such and add the paths separated by line breaks. Ex.:
+
+![Other Results Thirdy](http://i.imgur.com/UTh2N5u.png)
