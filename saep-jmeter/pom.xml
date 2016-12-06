@@ -18,7 +18,7 @@
 
     <properties>
         <webapp.protocol>http</webapp.protocol>
-        <webapp.host>www.mozilla.com</webapp.host>
+        <webapp.host>www.saep.inf.ufg.br</webapp.host>
         <webapp.port>80</webapp.port>
         <webapp.uris>${project.basedir}/src/test/uris/uris.txt</webapp.uris>
         <jmeter.analysis.maven.plugin.version>1.0.6</jmeter.analysis.maven.plugin.version>
