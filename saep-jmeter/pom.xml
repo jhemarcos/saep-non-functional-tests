@@ -18,7 +18,7 @@
 
     <properties>
         <webapp.protocol>http</webapp.protocol>
-        <webapp.host>www.saep.inf.ufg.br</webapp.host>
+        <webapp.host>www.mozilla.org</webapp.host>
         <webapp.port>80</webapp.port>
         <webapp.uris>${project.basedir}/src/test/uris/uris.txt</webapp.uris>
         <jmeter.analysis.maven.plugin.version>1.0.6</jmeter.analysis.maven.plugin.version>
@@ -54,7 +54,7 @@
                                 <!-- Nome desse group thread -->
                                 <performThreadgroup00.name>PerformanceTest</performThreadgroup00.name>
                                 <!-- Número de threads -->
-                                <performThreadgroup00.numberOfThreads>1000</performThreadgroup00.numberOfThreads>
+                                <performThreadgroup00.numberOfThreads>10</performThreadgroup00.numberOfThreads>
                                 <!-- Delay inicial do teste em segundos -->
                                 <performThreadgroup00.scheduledDelay>0</performThreadgroup00.scheduledDelay>
                                 <!-- Fade in das threads em segundos -->
@@ -69,7 +69,7 @@
                                 <!-- Nome desse group thread -->
                                 <loadThreadgroup00.name>LoadTest1</loadThreadgroup00.name>
                                 <!-- Número de threads -->
-                                <loadThreadgroup00.numberOfThreads>2000</loadThreadgroup00.numberOfThreads>
+                                <loadThreadgroup00.numberOfThreads>20</loadThreadgroup00.numberOfThreads>
                                 <!-- Delay inicial do teste em segundos -->
                                 <loadThreadgroup00.scheduledDelay>0</loadThreadgroup00.scheduledDelay>
                                 <!-- Fade in das threads em segundos -->
@@ -82,7 +82,7 @@
                                 <!-- Nome desse group thread -->
                                 <loadThreadgroup01.name>LoadTest2</loadThreadgroup01.name>
                                 <!-- Número de threads -->
-                                <loadThreadgroup01.numberOfThreads>3000</loadThreadgroup01.numberOfThreads>
+                                <loadThreadgroup01.numberOfThreads>30</loadThreadgroup01.numberOfThreads>
                                 <!-- Delay inicial do teste em segundos -->
                                 <loadThreadgroup01.scheduledDelay>0</loadThreadgroup01.scheduledDelay>
                                 <!-- Fade in das threads em segundos -->
@@ -95,7 +95,7 @@
                                 <!-- Nome desse group thread -->
                                 <loadThreadgroup02.name>LoadTest3</loadThreadgroup02.name>
                                 <!-- Número de threads -->
-                                <loadThreadgroup02.numberOfThreads>4000</loadThreadgroup02.numberOfThreads>
+                                <loadThreadgroup02.numberOfThreads>40</loadThreadgroup02.numberOfThreads>
                                 <!-- Delay inicial do teste em segundos -->
                                 <loadThreadgroup02.scheduledDelay>0</loadThreadgroup02.scheduledDelay>
                                 <!-- Fade in das threads em segundos -->
@@ -110,9 +110,9 @@
                                 <!-- Nome desse group thread -->
                                 <stressThreadgroup00.name>StressTest1</stressThreadgroup00.name>
                                 <!-- Número de threads -->
-                                <stressThreadgroup00.numberOfThreads>5000</stressThreadgroup00.numberOfThreads>
+                                <stressThreadgroup00.numberOfThreads>50</stressThreadgroup00.numberOfThreads>
                                 <!-- Duração do teste em segundos -->
-                                <stressThreadgroup00.scheduledDuration>60</stressThreadgroup00.scheduledDuration>
+                                <stressThreadgroup00.scheduledDuration>6</stressThreadgroup00.scheduledDuration>
                                 <!-- Fade in das threads em segundos -->
                                 <stressThreadgroup00.rampUp>0</stressThreadgroup00.rampUp>
                                 <!-- Usar urls do arquivo -->
@@ -121,9 +121,9 @@
                                 <!-- Nome desse group thread -->
                                 <stressThreadgroup01.name>StressTest2</stressThreadgroup01.name>
                                 <!-- Número de threads -->
-                                <stressThreadgroup01.numberOfThreads>6000</stressThreadgroup01.numberOfThreads>
+                                <stressThreadgroup01.numberOfThreads>60</stressThreadgroup01.numberOfThreads>
                                 <!-- Duração do teste em segundos -->
-                                <stressThreadgroup01.scheduledDuration>60</stressThreadgroup01.scheduledDuration>
+                                <stressThreadgroup01.scheduledDuration>6</stressThreadgroup01.scheduledDuration>
                                 <!-- Fade in das threads em segundos -->
                                 <stressThreadgroup01.rampUp>0</stressThreadgroup01.rampUp>
                                 <!-- Usar urls do arquivo -->
@@ -132,9 +132,9 @@
                                 <!-- Nome desse group thread -->
                                 <stressThreadgroup02.name>StressTest3</stressThreadgroup02.name>
                                 <!-- Número de threads -->
-                                <stressThreadgroup02.numberOfThreads>7000</stressThreadgroup02.numberOfThreads>
+                                <stressThreadgroup02.numberOfThreads>70</stressThreadgroup02.numberOfThreads>
                                 <!-- Duração do teste em segundos -->
-                                <stressThreadgroup02.scheduledDuration>60</stressThreadgroup02.scheduledDuration>
+                                <stressThreadgroup02.scheduledDuration>6</stressThreadgroup02.scheduledDuration>
                                 <!-- Fade in das threads em segundos -->
                                 <stressThreadgroup02.rampUp>0</stressThreadgroup02.rampUp>
                                 <!-- Usar urls do arquivo -->
